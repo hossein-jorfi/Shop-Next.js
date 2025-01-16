@@ -23,7 +23,7 @@ const TopSection = () => {
             <UserRound />
           </NavItemWraper>
         </div>
-        <div className="h-6 border w-[1px]" />
+        <div className="h-6 border-r border-primary/30 w-[1px]" />
         <NavItemWraper>
           <ShoppingCart />
         </NavItemWraper>
@@ -36,7 +36,7 @@ export default TopSection;
 
 const NavItemWraper = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="rounded-full p-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors disabled:opacity-50 hover:bg-accent hover:text-accent-foreground cursor-pointer">
+    <div className="rounded-md p-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors disabled:opacity-50 hover:bg-accent hover:text-accent-foreground cursor-pointer">
       {children}
     </div>
   );
