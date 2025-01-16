@@ -1,12 +1,11 @@
-import { IconInput, Input } from "@/components/ui/input";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { SearchInput } from "@/components/ui/input";
 
 const NavSearch = () => {
   return (
     <div>
       {/* <Input className="relative" placeholder="Search" />
       <MagnifyingGlassIcon /> */}
-      <IconInput icon={<MagnifyingGlassIcon />} />
+      <SearchInput placeholder="search" />
     </div>
   );
 };
