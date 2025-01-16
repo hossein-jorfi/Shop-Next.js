@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="text-center">
-      <p className="text-5xl text-center">Hello World</p>
+    <div className="">
+      <p className="text-5xl ">Hello World</p>
       <Button>test</Button>
     </div>
   );
