@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { Search } from "lucide-react";
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
   ({ className, type, ...props }, ref) => {
@@ -28,10 +28,9 @@ export interface InputProps
 const SearchInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
-      <div className="relative flex items-center bg-input rounded-md overflow-hidden h-9 w-full px-3 py-1 shadow-sm">
-        <div className="absolute left-1 w-5 h-5">
-          <MagnifyingGlassIcon className="text-muted-foreground" />
-        </div>
+      <div className="relative flex items-center bg-input rounded-md overflow-hidden h-9 w-full px-3 py-1">
+          {/* <MagnifyingGlassIcon className="text-muted-foreground" /> */}
+          <Search className="absolute left-1 w-5 h-5 text-muted-foreground" />
         <input
           type={type}
           className={cn(

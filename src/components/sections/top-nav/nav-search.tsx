@@ -1,13 +1,7 @@
 import { SearchInput } from "@/components/ui/input";
 
 const NavSearch = () => {
-  return (
-    <div>
-      {/* <Input className="relative" placeholder="Search" />
-      <MagnifyingGlassIcon /> */}
-      <SearchInput placeholder="search" />
-    </div>
-  );
+  return <SearchInput placeholder="search" className="w-96 font-semibold" />;
 };
 
 export default NavSearch;
