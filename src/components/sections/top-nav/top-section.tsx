@@ -1,4 +1,5 @@
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import Search from "./nav-search";
 
 const TopSection = () => {
   return (
@@ -8,7 +9,7 @@ const TopSection = () => {
           <GlobeAltIcon width={42} height={42} />
           <p className="font-bold text-4xl">Shop</p>
         </div>
-        <div>Maybe Search</div>
+        <Search />
       </div>
       <div>Cart and User Profile</div>
     </div>
