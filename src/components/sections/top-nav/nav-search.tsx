@@ -1,7 +1,12 @@
+import { IconInput, Input } from "@/components/ui/input";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+
 const NavSearch = () => {
   return (
-    <div className="border p-2">
-      <input type="text" className="outline-none" placeholder="search..." />
+    <div>
+      {/* <Input className="relative" placeholder="Search" />
+      <MagnifyingGlassIcon /> */}
+      <IconInput icon={<MagnifyingGlassIcon />} />
     </div>
   );
 };
