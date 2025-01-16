@@ -1,5 +1,7 @@
-import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import Search from "./nav-search";
+import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import { UserRound, Bell, ShoppingCart } from "lucide-react";
+import { ReactNode } from "react";
 
 const TopSection = () => {
   return (
@@ -11,9 +13,31 @@ const TopSection = () => {
         </div>
         <Search />
       </div>
-      <div>Cart and User Profile</div>
+
+      <div className="flex gap-3 items-center text-primary/80">
+        <div className="flex gap-2 items-center">
+          <NavItemWraper>
+            <Bell />
+          </NavItemWraper>
+          <NavItemWraper>
+            <UserRound />
+          </NavItemWraper>
+        </div>
+        <div className="h-6 border w-[1px]" />
+        <NavItemWraper>
+          <ShoppingCart />
+        </NavItemWraper>
+      </div>
     </div>
   );
 };
 
 export default TopSection;
+
+const NavItemWraper = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className="rounded-full p-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors disabled:opacity-50 hover:bg-accent hover:text-accent-foreground cursor-pointer">
+      {children}
+    </div>
+  );
+};
