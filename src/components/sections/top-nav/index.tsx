@@ -12,7 +12,7 @@ export default TopNav;
 
 const TopSection = () => {
   return (
-    <div className="flex justify-between content-paddign">
+    <div className="flex justify-between content-paddign-x">
       <div className="flex gap-10 items-center">
         <div className="text-red flex items-center">
           <GlobeAltIcon width={42} height={42} />

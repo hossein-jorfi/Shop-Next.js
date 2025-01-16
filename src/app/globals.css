@@ -67,7 +67,10 @@
 }
 
 @layer utilities {
-  .content-paddign {
+  .content-paddign-x {
     @apply px-5
+  }
+  .content-paddign-y {
+    @apply py-5
   }
 }
