@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import ProductCard from "./product-card";
 
 export function MainSlider() {
   const nextRef = useRef<HTMLButtonElement>(null);
@@ -30,9 +31,7 @@ export function MainSlider() {
           <CarouselContent>
             {Array.from({ length: 20 }).map((_, index) => (
               <CarouselItem key={index} className="h-48 basis-[13%]">
-                <div className="h-full rounded-xl bg-slate-100 flex justify-center items-center bg-red">
-                  {index + 1}
-                </div>
+                <ProductCard />
               </CarouselItem>
             ))}
           </CarouselContent>
