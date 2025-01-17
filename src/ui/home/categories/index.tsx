@@ -19,7 +19,7 @@ const ITEMS = [
 
 const Categories = () => {
   return (
-    <div className="grid grid-cols-2 grid-rows-4 gap-4 mt-5 px-5">
+    <div className="grid grid-cols-2 grid-rows-4 gap-4 mt-5 px-5 custom-container">
       {ITEMS.map((item, index) => (
         <div
           className="border h-52 flex justify-center items-center rounded-xl text-red"

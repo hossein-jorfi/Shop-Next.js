@@ -15,7 +15,7 @@ type Props = {
 function Products({ products }: Props) {
   return (
     <div className="pattern h-72 flex justify-center items-center px-5">
-      <div className="bg-red h-64 w-full rounded-xl flex items-center justify-center px-5">
+      <div className="bg-red h-64 w-full rounded-xl flex items-center justify-center px-5 custom-container">
         <Carousel
           opts={{
             align: "start",
@@ -23,9 +23,13 @@ function Products({ products }: Props) {
           }}
           className="w-full"
         >
-          <CarouselContent>
+          <CarouselContent className="gap-3">
             {products?.map((product) => (
-              <CarouselItem key={product.id} className="h-52 basis-[13%]">
+              <CarouselItem
+                key={product.id}
+                // className="w-36 h-52 basis-1/3 sm:basis-[24%] md:basis-[20%] lg:basis-[13%]"
+                className="w-36 h-52"
+              >
                 <ProductCard product={product} />
               </CarouselItem>
             ))}

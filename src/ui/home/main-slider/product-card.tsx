@@ -8,7 +8,7 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="bg-background h-full rounded-xl overflow-hidden flex flex-col justify-between items-center pb-1 select-none cursor-pointer">
+    <div className="bg-background h-52 w-36 rounded-xl overflow-hidden flex flex-col justify-between items-center pb-1 select-none cursor-pointer">
       <AspectRatio className="flex justify-center items-center">
         <Image src={product.image} alt="product" width={70} height={70} />
       </AspectRatio>
