@@ -1,5 +1,5 @@
-"use client"
-import * as React from "react";
+"use client";
+import { useEffect, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,8 +9,15 @@ import {
 } from "@/components/ui/carousel";
 
 export function MainSlider() {
-  const nextRef = React.useRef<HTMLButtonElement>(null);
-  const prevRef = React.useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const prevRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    setInterval(() => {
+      nextRef.current?.click();
+    }, 5000);
+  }, []);
+
   return (
     <Carousel
       opts={{
@@ -20,7 +27,10 @@ export function MainSlider() {
     >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="h-80" onClick={() => nextRef.current?.click()}>
+          <CarouselItem
+            key={index}
+            className="h-80"
+          >
             <div className="h-full border flex justify-center items-center bg-red/50">
               {index + 1}
             </div>
