@@ -1,29 +1,28 @@
-import DevicesVector from "@/assets/common/devices.svg";
-import JeweleryVector from "@/assets/common/jewelery.svg";
-import MensVector from "@/assets/common/mens-hoodie.svg";
-import WomensVector from "@/assets/common/womens-t-shirt.svg";
-import Image from "next/image";
+import DevicesSVG from "@/assets/common/devices";
+import JewelerySVG from "@/assets/common/jewelery";
+import MensHoodieSVG from "@/assets/common/mens-hoodie";
+import WomensTshirtSVG from "@/assets/common/womens-t-shirt";
 
 const ITEMS = [
   {
     title: "Electronics",
     href: "#",
-    icon: DevicesVector,
+    icon: <DevicesSVG />,
   },
   {
     title: "Jewelery",
     href: "#",
-    icon: JeweleryVector,
+    icon: <JewelerySVG />,
   },
   {
     title: "Mens clothing",
     href: "#",
-    icon: MensVector,
+    icon: <MensHoodieSVG />,
   },
   {
     title: "Women's clothing",
     href: "#",
-    icon: WomensVector,
+    icon: <WomensTshirtSVG />,
   },
 ];
 
@@ -32,11 +31,11 @@ const Categories = () => {
     <div className="grid grid-cols-2 grid-rows-4 gap-4 mt-5 px-5 custom-container">
       {ITEMS.map((item, index) => (
         <div
-          className="border h-52 flex justify-center items-center rounded-xl text-red cursor-pointer hover:border-red/70 transition-all flex-col gap-2 overflow-hidden p-10"
+          className="border h-52 flex justify-center items-center rounded-xl cursor-pointer hover:border-red/70 hover:text-red font-semibold transition-all flex-col gap-2 overflow-hidden p-10"
           key={index}
         >
-          <Image src={item.icon} alt={item.title} className="w-full h-full" />
-          {item.title}
+          {item.icon}
+          <p>{item.title}</p>
         </div>
       ))}
     </div>
