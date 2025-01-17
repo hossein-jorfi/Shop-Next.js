@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ITEMS = [
   {
@@ -26,24 +26,32 @@ const BottomSection = () => {
 
   return (
     <div className="mt-4 flex font-semibold text-sm pb-2 space-x-4">
-      {ITEMS.map((item, index) => (
-        <CategoryItemWraper
-          key={index}
-          title={item.title}
-          setIsHovered={(value) => {
-            if (value) {
-              setHovered(index)
-            } else setHovered(-1)
-          }}
-        >
-          {index === hovered && (
-            <motion.div
-              className="w-full h-[2px] rounded absolute -bottom-2 bg-red"
-              transition={{ duration: 0.5 }}
-            />
-          )}
-        </CategoryItemWraper>
-      ))}
+      <AnimatePresence>
+        {ITEMS.map((item, index) => (
+          <CategoryItemWraper
+            key={index}
+            title={item.title}
+            setIsHovered={(value) => {
+              if (value) {
+                setHovered(index);
+              } else setHovered(-1);
+            }}
+          >
+            {index === hovered && (
+              <motion.div
+                key={index}
+                className="h-[2px] rounded absolute -bottom-2 bg-red"
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 0.5, ease: "anticipate" }}
+                exit={{
+                  opacity: 0,
+                }}
+              />
+            )}
+          </CategoryItemWraper>
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
