@@ -19,6 +19,10 @@ const ITEMS = [
     title: "Mens clothing",
     href: "#",
   },
+  {
+    title: "Women's clothing",
+    href: "#",
+  },
 ];
 
 const BottomSection = () => {
