@@ -1,12 +1,33 @@
-import { ReactNode } from "react";
+"use client";
+import { ReactNode, useState } from "react";
+
+const ITEMS = [
+  {
+    title: "All Products",
+    href: "#",
+  },
+  {
+    title: "Electronics",
+    href: "#",
+  },
+  {
+    title: "Jewelery",
+    href: "#",
+  },
+  {
+    title: "Mens clothing",
+    href: "#",
+  },
+];
 
 const BottomSection = () => {
+  const [hovered, setHovered] = useState(0);
+
   return (
-    <div className="mt-2 flex font-semibold text-sm text-primary/80 pb-2">
-      <CategoryItemWraper>All Products</CategoryItemWraper>
-      <CategoryItemWraper>Electronics</CategoryItemWraper>
-      <CategoryItemWraper>Jewelery</CategoryItemWraper>
-      <CategoryItemWraper>Mens clothing</CategoryItemWraper>
+    <div className="mt-4 flex font-semibold text-sm pb-2">
+      {ITEMS.map((item, index) => (
+        <CategoryItemWraper key={index}>{item.title}</CategoryItemWraper>
+      ))}
     </div>
   );
 };
@@ -14,5 +35,5 @@ const BottomSection = () => {
 export default BottomSection;
 
 const CategoryItemWraper = ({ children }: { children: ReactNode }) => {
-  return <p className="hover:border-b-2 border-red cursor-pointer pr-6">{children}</p>;
+  return <p className="cursor-pointer pr-6 text-primary/70">{children}</p>;
 };
