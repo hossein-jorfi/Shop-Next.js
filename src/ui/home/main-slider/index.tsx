@@ -19,7 +19,7 @@ export function MainSlider() {
 
   return (
     <div className="pattern h-64 flex justify-center items-center px-5">
-      <div className="bg-red h-56 w-full rounded-xl flex items-center justify-center">
+      <div className="bg-red h-56 w-full rounded-xl flex items-center justify-center px-5">
         <Carousel
           opts={{
             align: "start",
@@ -29,15 +29,15 @@ export function MainSlider() {
         >
           <CarouselContent>
             {Array.from({ length: 20 }).map((_, index) => (
-              <CarouselItem key={index} className="h-48 basis-1/6">
-                <div className="h-full rounded-xl border flex justify-center items-center bg-red">
+              <CarouselItem key={index} className="h-48 basis-[13%]">
+                <div className="h-full rounded-xl bg-slate-100 flex justify-center items-center bg-red">
                   {index + 1}
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-5" />
-          <CarouselNext className="right-5" ref={nextRef} />
+          <CarouselPrevious className="left-1" />
+          <CarouselNext className="right-1" ref={nextRef} />
         </Carousel>
       </div>
     </div>
