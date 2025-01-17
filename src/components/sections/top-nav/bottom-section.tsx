@@ -1,5 +1,6 @@
 "use client";
 import { ReactNode, useState } from "react";
+import { motion } from "framer-motion";
 
 const ITEMS = [
   {
@@ -21,12 +22,19 @@ const ITEMS = [
 ];
 
 const BottomSection = () => {
-  const [hovered, setHovered] = useState(0);
+  const [hovered, setHovered] = useState(1);
 
   return (
     <div className="mt-4 flex font-semibold text-sm pb-2">
       {ITEMS.map((item, index) => (
-        <CategoryItemWraper key={index}>{item.title}</CategoryItemWraper>
+        <CategoryItemWraper key={index} title={item.title}>
+          {index === hovered && (
+            <motion.div
+              className="w-full h-[3px] rounded absolute -bottom-1"
+              style={{ backgroundColor: "red" }}
+            />
+          )}
+        </CategoryItemWraper>
       ))}
     </div>
   );
@@ -34,6 +42,17 @@ const BottomSection = () => {
 
 export default BottomSection;
 
-const CategoryItemWraper = ({ children }: { children: ReactNode }) => {
-  return <p className="cursor-pointer pr-6 text-primary/70">{children}</p>;
+const CategoryItemWraper = ({
+  children,
+  title,
+}: {
+  children: ReactNode;
+  title: string;
+}) => {
+  return (
+    <div className="relative">
+      <p className="cursor-pointer text-primary/70">{title}</p>
+      {children}
+    </div>
+  );
 };
