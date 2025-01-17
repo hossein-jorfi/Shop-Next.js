@@ -12,7 +12,13 @@ const ProductCard = () => {
           height={70}
         />
       </AspectRatio>
-      <p className="px-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut</p>
+
+      <p className="px-1 text-sm overflow-hidden">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
+      </p>
+      <p className="text-xs text-left w-full px-2">
+        300 <span>USD</span>
+      </p>
     </div>
   );
 };
