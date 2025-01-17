@@ -32,11 +32,11 @@ const Categories = () => {
     <div className="grid grid-cols-2 grid-rows-4 gap-4 mt-5 px-5 custom-container">
       {ITEMS.map((item, index) => (
         <div
-          className="border h-52 flex justify-center items-center rounded-xl text-red cursor-pointer hover:border-red/70 transition-all"
+          className="border h-52 flex justify-center items-center rounded-xl text-red cursor-pointer hover:border-red/70 transition-all flex-col gap-2 overflow-hidden p-10"
           key={index}
         >
-          {item.title}
           <Image src={item.icon} alt={item.title} className="w-full h-full" />
+          {item.title}
         </div>
       ))}
     </div>
