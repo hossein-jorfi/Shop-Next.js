@@ -9,6 +9,9 @@ export default {
     "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
         red: "hsl(var(--custom-red))",
