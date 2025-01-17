@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-center`}
       >
         <TopNav />
-        <div className="mt-[107px] h-[200vh]">{children}</div>
+        <div className="mt-[107px]">{children}</div>
       </body>
     </html>
   );
