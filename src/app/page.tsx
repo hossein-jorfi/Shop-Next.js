@@ -1,4 +1,4 @@
-import { MainSlider } from "@/components/sections/main-slider";
+import { MainSlider } from "@/ui/home/main-slider";
 
 export default function Home() {
   return (
