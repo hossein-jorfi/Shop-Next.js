@@ -6,13 +6,13 @@ import { Separator } from "@/components/ui/separator";
 
 const TopSection = () => {
   return (
-    <div className="flex justify-between items-center">
-      <div className="flex gap-3 items-center">
+    <div className="flex justify-between items-center gap-7">
+      <div className="flex gap-3 items-center w-full md:w-1/2">
         <CompanyLogo />
         <Search />
       </div>
 
-      <div className="flex gap-3 items-center text-primary/80">
+      <div className="hidden sm:flex gap-3 items-center text-primary/80">
         <div className="flex gap-2 items-center">
           <NavItemWraper>
             <Bell />

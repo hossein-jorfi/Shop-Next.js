@@ -71,7 +71,7 @@
     @apply px-5;
   }
   .content-paddign-y {
-    @apply py-5;
+    @apply py-2 sm:py-5;
   }
 
   .pattern {

@@ -29,7 +29,7 @@ const BottomSection = () => {
   const [hovered, setHovered] = useState(-1);
 
   return (
-    <div className="mt-4 flex font-semibold text-sm pb-2 space-x-4">
+    <div className="mt-4 hidden sm:flex font-semibold text-sm pb-2 space-x-4">
       <AnimatePresence>
         {ITEMS.map((item, index) => (
           <CategoryItemWraper
@@ -77,7 +77,7 @@ const CategoryItemWraper = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <p className="cursor-pointer text-primary/70">{title}</p>
+      <p className="cursor-pointer text-muted-foreground">{title}</p>
       {children}
     </div>
   );
