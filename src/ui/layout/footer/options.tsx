@@ -3,6 +3,7 @@ import cash_on_delivery from "@/assets/footer/cash-on-delivery.svg";
 import days_return from "@/assets/footer/days-return.svg";
 import express_delivery from "@/assets/footer/express-delivery.svg";
 import support from "@/assets/footer/support.svg";
+import Image from "next/image";
 
 const ITEMS = [
   {
@@ -28,7 +29,16 @@ const ITEMS = [
 ];
 
 const Options = () => {
-  return <div></div>;
+  return (
+    <div className="flex justify-between items-center text-xs text-muted-foreground">
+      {ITEMS.map((item, index) => (
+        <div key={index} className="flex flex-col items-center">
+          <Image src={item.icon} alt={item.title} />
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Options;
