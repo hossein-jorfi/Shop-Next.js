@@ -2,6 +2,7 @@ import CompanyLogo from "@/ui/shared/company-logo";
 import Search from "./nav-search";
 import { UserRound, Bell, ShoppingCart } from "lucide-react";
 import { ReactNode } from "react";
+import { Separator } from "@/components/ui/separator";
 
 const TopSection = () => {
   return (
@@ -20,7 +21,8 @@ const TopSection = () => {
             <UserRound />
           </NavItemWraper>
         </div>
-        <div className="h-6 border-r border-primary/30 w-[1px]" />
+        {/* <div className="h-6 border-r border-primary/30 w-[1px]" /> */}
+        <Separator orientation="vertical" className="h-6" />
         <NavItemWraper>
           <ShoppingCart />
         </NavItemWraper>
