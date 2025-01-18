@@ -30,7 +30,7 @@ const ITEMS = [
 
 const Options = () => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 text-xs text-muted-foreground">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 text-xs text-muted-foreground font-semibold">
       {ITEMS.map((item, index) => (
         <div key={index} className="flex flex-col items-center">
           <Image src={item.icon} alt={item.title} />
