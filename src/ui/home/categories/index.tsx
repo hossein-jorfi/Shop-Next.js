@@ -28,7 +28,7 @@ const ITEMS = [
 
 const Categories = () => {
   return (
-    <div className="grid grid-cols-2 grid-rows-4 gap-4 mt-5 px-5 custom-container">
+    <div className="grid grid-cols-2 grid-rows-4 gap-4 mt-5 px-5 custom-container md:px-24 lg:px-52">
       {ITEMS.map((item, index) => (
         <div
           className="border h-52 flex justify-center items-center rounded-xl cursor-pointer hover:border-red/70 hover:text-red font-semibold transition-all flex-col gap-2 overflow-hidden p-10"

@@ -4,10 +4,8 @@ import MainSlider from "@/ui/home/main-slider";
 export default function Home() {
   return (
     <div>
-      <div>
-        <MainSlider />
-        <Categories />
-      </div>
+      <MainSlider />
+      <Categories />
     </div>
   );
 }
