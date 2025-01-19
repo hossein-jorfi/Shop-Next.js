@@ -1,5 +1,3 @@
-"use client";
-
 const ITEMS = [
   {
     title: "All Products",
@@ -31,7 +29,7 @@ const BottomSection = () => {
           <p className="text-muted-foreground group-hover:text-primary transition-all">
             {item.title}
           </p>
-          <div className="h-[2px] rounded absolute -bottom-2 w-0 group-hover:!w-full bg-red transition-all ease-out" />
+          <div className="h-[2px] rounded absolute -bottom-2 w-0 group-hover:!w-full bg-red transition-all ease-out duration-300" />
         </div>
       ))}
     </div>
