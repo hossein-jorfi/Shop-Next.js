@@ -7,6 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 const ShopBreadcrumb = () => {
@@ -17,17 +18,23 @@ const ShopBreadcrumb = () => {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href="/">Home</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
+          <BreadcrumbLink asChild>
+            <Link href="/shop">Shop</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         {categories && (
           <>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink>{categories}</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+              <Link href="#">{categories}</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
           </>
         )}
