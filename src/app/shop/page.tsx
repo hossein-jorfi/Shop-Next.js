@@ -1,9 +1,9 @@
 const Shop = () => {
-      return (
-            <div>
-                  Shop
-            </div>
-      );
+  return (
+    <div className="flex flex-col items-start custom-container content-paddign-x content-paddign-y">
+      Shop
+    </div>
+  );
 };
 
 export default Shop;
