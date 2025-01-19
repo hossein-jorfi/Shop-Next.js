@@ -10,7 +10,7 @@ export default function NotFound() {
       <Image src={NotFoundSVG} alt="notfound" className="lg:w-1/2" />
       <div className="space-y-3">
         <h2 className="font-medium text-2xl">Page Not Found!</h2>
-        <Button>
+        <Button className="font-bold">
           <Link href="/">Return Home</Link>
         </Button>
       </div>
