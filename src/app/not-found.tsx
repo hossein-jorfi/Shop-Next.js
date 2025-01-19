@@ -1,11 +1,19 @@
 import Link from "next/link";
 
+import NotFoundSVG from "@/assets/common/Not-Found.svg";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+
 export default function NotFound() {
   return (
-    <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
+    <div className="flex justify-center items-center flex-col">
+      <Image src={NotFoundSVG} alt="notfound" className="lg:w-1/2" />
+      <div className="space-y-3">
+        <h2 className="font-medium text-2xl">Page Not Found!</h2>
+        <Button>
+          <Link href="/">Return Home</Link>
+        </Button>
+      </div>
     </div>
   );
 }
