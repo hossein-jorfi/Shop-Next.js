@@ -24,9 +24,13 @@ const Filters = () => {
     <div className="p-3 w-80 border rounded-lg h-80 flex flex-col items-start">
       <div className="flex justify-between w-full items-center">
         <p className="font-semibold text-primary/90">Filters</p>
-        {/* <Button variant="ghost" className="text-[#19bfd3] text-xs font-bold hover:text-[#19bfd3]/80 bg-">
+        <Button
+          variant="ghost"
+          className="text-custom-blue font-bold hover:text-custom-blue hover:bg-custom-blue/10"
+          size='sm'
+        >
           Clear All
-        </Button> */}
+        </Button>
       </div>
       <div className="flex flex-col items-start gap-2 mt-2 w-full">
         {ITEMS.map((item, index) => (
