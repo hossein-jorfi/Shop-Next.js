@@ -1,5 +1,5 @@
 import { ProductType } from "@/definitions";
-import Filters from "@/ui/shop/filters";
+import Sorts from "@/ui/shop/sorts";
 import Products from "@/ui/shop/products";
 import ShopBreadcrumb from "@/ui/shop/shop-breadcrumb";
 import { Suspense } from "react";
@@ -15,7 +15,7 @@ const Shop = async () => {
       </Suspense>
 
       <div className="mt-5 flex gap-3 w-full h-full">
-        <Filters />
+        <Sorts />
 
         <Suspense>
           <Products products={products} />
