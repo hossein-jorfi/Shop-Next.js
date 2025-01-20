@@ -2,7 +2,7 @@ import { ProductType } from "@/definitions";
 
 export const filterProducts = (
   products: ProductType[] | undefined,
-  category: string
+  category: string | null
 ) => {
   if (!category) {
     return products;
