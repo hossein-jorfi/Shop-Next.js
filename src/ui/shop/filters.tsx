@@ -27,7 +27,7 @@ const Filters = () => {
         <Button
           variant="ghost"
           className="text-custom-blue font-bold hover:text-custom-blue hover:bg-custom-blue/10"
-          size='sm'
+          size="sm"
         >
           Clear All
         </Button>
