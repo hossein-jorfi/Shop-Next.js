@@ -6,7 +6,6 @@ type Props = {
 };
 
 const Products = ({ products }: Props) => {
-  console.log(products)
   return (
     <div className="w-full h-full grid grid-cols-3 gap-3">
       {products?.map((product) => (
