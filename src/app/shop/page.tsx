@@ -13,7 +13,7 @@ const Shop = async () => {
 
       <div className="mt-5 flex gap-3 w-full h-full">
         <Filters />
-        <Products />
+        <Products products={products} />
       </div>
     </div>
   );
