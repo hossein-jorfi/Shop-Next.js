@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Star } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ProductType } from "@/definitions";
-import express_delivery from "@/assets/footer/express-delivery.svg";
 import ColorsPlate from "./colors-plate";
+import ClockImage from '@/assets/shop/clock.png'
 
 type Props = {
   product: ProductType;
@@ -45,9 +45,9 @@ const ProductCard = ({ product }: Props) => {
         <div className="flex items-center text-xs font-medium text-muted-foreground gap-1">
           <p>Special Delivery</p>
           <Image
-            src={express_delivery}
+            src={ClockImage}
             alt="Special Delivery"
-            className="w-7"
+            className="w-5"
           />
         </div>
       </div>
