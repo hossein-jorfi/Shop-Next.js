@@ -51,11 +51,14 @@ const Sorts = () => {
       <div className="flex flex-col items-start gap-2 mt-2 w-full">
         {ITEMS.map((item, index) => (
           <Link
-            href={generateHref(item.key)}
             key={index}
-            className="border p-2 w-full text-left text-sm font-semibold text-muted-foreground rounded-md hover:bg-muted cursor-pointer"
+            href={generateHref(item.key)}
+            // className="border p-2 w-full text-left text-sm font-semibold text-muted-foreground rounded-md hover:bg-muted cursor-pointer hover:text-primary hover:border-primary"
+            className="w-full text-left text-sm font-semibold"
           >
-            <p>{item.title}</p>
+            <Button variant='outline' className="w-full text-sm font-semibold">
+              <p>{item.title}</p>
+            </Button>
           </Link>
         ))}
       </div>
