@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ProductType } from "@/definitions";
 import express_delivery from "@/assets/footer/express-delivery.svg";
+import ColorsPlate from "./colors-plate";
 
 type Props = {
   product: ProductType;
@@ -52,7 +53,7 @@ const ProductCard = ({ product }: Props) => {
       </div>
 
       {/* colors */}
-      <div className="absolute">colors</div>
+      <ColorsPlate />
     </div>
   );
 };
