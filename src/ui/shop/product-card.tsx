@@ -8,8 +8,9 @@ type Props = {
 };
 
 const ProductCard = ({ product }: Props) => {
+  console.log(product)
   return (
-    <div className="flex flex-col justify-between items-center pb-1 select-none cursor-pointer relative product-grid-item before:bg-border after:bg-border">
+    <div className="flex flex-col justify-between items-start pb-1 select-none cursor-pointer relative product-grid-item before:bg-border after:bg-border">
       <AspectRatio className="flex justify-center items-center">
         <Image
           src={product.image}
@@ -21,20 +22,20 @@ const ProductCard = ({ product }: Props) => {
         />
       </AspectRatio>
 
-      <p className="px-2 h-[44px] text-sm font-semibold text-muted-foreground overflow-hidden">
+      <p className="h-[44px] text-sm font-semibold text-muted-foreground overflow-hidden">
         {product.title}
       </p>
-      <p className="px-2 text-xs text-left w-full font-bold text">
-        {product.price}{" "}
-        <span className="text-[11px] font-extrabold text-primary/80">USD</span>
-      </p>
-
-      <div className="absolute top-1 left-1 flex items-center gap-[2px]">
+      <div className="flex items-center gap-[2px]">
         <Star fill="#f9a825" stroke="#f9a825" width={15} />
         <p className="text-[#f9a825] text-xs font-extrabold">
           {product.rating.rate}
         </p>
       </div>
+      <p className="text-xs text-left w-full font-bold text">
+        {product.price}{" "}
+        <span className="text-[11px] font-extrabold text-primary/80">USD</span>
+      </p>
+
     </div>
   );
 };

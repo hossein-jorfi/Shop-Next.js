@@ -8,7 +8,7 @@ type Props = {
 
 const Products = ({ products }: Props) => {
   return (
-    <div className="w-full h-full grid grid-cols-3 product-grid">
+    <div className="w-full h-full grid grid-cols-3 product-grid border-t border-b">
       {products?.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
