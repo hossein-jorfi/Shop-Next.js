@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -27,7 +28,7 @@ const Sorts = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const categories = searchParams.get("categories");
-  // const sort = searchParams.get("sort");
+  const sort = searchParams.get("sort");
 
   const generateHref = (key: string) => {
     const newHref = `${pathname}?sort=${key}${
@@ -56,7 +57,18 @@ const Sorts = () => {
             // className="border p-2 w-full text-left text-sm font-semibold text-muted-foreground rounded-md hover:bg-muted cursor-pointer hover:text-primary hover:border-primary"
             className="w-full text-left text-sm font-semibold"
           >
-            <Button variant='outline' className="w-full text-sm font-semibold">
+            <Button
+              variant={
+                item.key?.toLowerCase() === sort?.toLowerCase()
+                  ? "default"
+                  : "outline"
+              }
+              className={cn(
+                "w-full text-sm font-semibold transition-all",
+                item.key?.toLowerCase() === sort?.toLowerCase() &&
+                  "bg-custom-blue hover:bg-custom-blue"
+              )}
+            >
               <p>{item.title}</p>
             </Button>
           </Link>
