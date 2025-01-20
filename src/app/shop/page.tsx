@@ -10,7 +10,7 @@ const Shop = async () => {
 
   return (
     <div className="flex flex-col items-start custom-container content-paddign-x content-paddign-y h-full">
-      <Suspense fallback='Loading...'>
+      <Suspense>
         <ShopBreadcrumb />
       </Suspense>
 
