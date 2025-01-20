@@ -67,7 +67,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        same: "0 0 30px -5px rgba(0, 0, 0, 0.3)",
+        same: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
       },
     },
   },
