@@ -9,7 +9,7 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="bg-background flex flex-col justify-between items-center pb-1 select-none cursor-pointer relative">
+    <div className="flex flex-col justify-between items-center pb-1 select-none cursor-pointer relative product-grid-item before:bg-border after:bg-border">
       <AspectRatio className="flex justify-center items-center">
         <Image
           src={product.image}
