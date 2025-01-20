@@ -11,7 +11,7 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="flex flex-col justify-between items-start select-none cursor-pointer relative product-grid-item before:bg-border after:bg-border ">
+    <div className="flex flex-col justify-between items-start select-none cursor-pointer relative border p-4 hover:shadow-same">
       <AspectRatio className="flex justify-center items-center">
         <Image
           src={product.image}

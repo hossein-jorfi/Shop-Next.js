@@ -1,6 +1,5 @@
 import { ProductType } from "@/definitions";
 import ProductCard from "./product-card";
-import './styles.css'
 
 type Props = {
   products: ProductType[] | undefined;
@@ -8,7 +7,7 @@ type Props = {
 
 const Products = ({ products }: Props) => {
   return (
-    <div className="w-full h-full grid grid-cols-3 product-grid border-t border-b">
+    <div className="w-full h-full grid grid-cols-3 border">
       {products?.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
