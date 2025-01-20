@@ -43,7 +43,11 @@ const ProductCard = ({ product }: Props) => {
 
         <div className="flex items-center text-xs font-medium text-muted-foreground gap-1">
           <p>Special Delivery</p>
-          <Image src={express_delivery} alt="Special Delivery" className="w-7" />
+          <Image
+            src={express_delivery}
+            alt="Special Delivery"
+            className="w-7"
+          />
         </div>
       </div>
     </div>
