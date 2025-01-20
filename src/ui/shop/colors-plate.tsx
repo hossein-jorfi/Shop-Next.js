@@ -8,7 +8,7 @@ const ITEMS = [
 
 const ColorsPlate = () => {
   return (
-    <div className="absolute top-2 flex pl-3">
+    <div className="absolute top-2 flex pl-1">
       {ITEMS.map((item, index) => (
         <div
           key={index}
