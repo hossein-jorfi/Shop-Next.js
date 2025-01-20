@@ -15,11 +15,11 @@ const ITEMS = [
   },
   {
     title: "Mens clothing",
-    href: "/shop?categories=mens",
+    href: "/shop?categories=men's clothing",
   },
   {
     title: "Women's clothing",
-    href: "/shop?categories=women",
+    href: "/shop?categories=women's clothing",
   },
 ];
 
@@ -32,7 +32,7 @@ const BottomSection = () => {
           href={item.href}
           className="relative group cursor-pointer"
         >
-          <p className="text-muted-foreground group-hover:text-primary transition-all">
+          <p className="text-muted-foreground '  clothingtransition-all">
             {item.title}
           </p>
           <div className="h-[2px] rounded absolute -bottom-2 w-0 group-hover:!w-full bg-red transition-all ease-out duration-300" />

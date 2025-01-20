@@ -17,12 +17,12 @@ const ITEMS = [
   },
   {
     title: "Mens clothing",
-    href: "/shop?categories=mens",
+    href: "/shop?categories=men's clothing",
     icon: <MensHoodieSVG />,
   },
   {
     title: "Women's clothing",
-    href: "/shop?categories=women",
+    href: "/shop?categories=women's clothing",
     icon: <WomensTshirtSVG />,
   },
 ];
