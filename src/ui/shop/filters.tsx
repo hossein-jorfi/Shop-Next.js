@@ -29,7 +29,7 @@ const Filters = () => {
           className="text-custom-blue font-bold hover:text-custom-blue hover:bg-custom-blue/10"
           size="sm"
         >
-          Clear All
+          Clear
         </Button>
       </div>
       <div className="flex flex-col items-start gap-2 mt-2 w-full">
