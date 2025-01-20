@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
@@ -34,6 +34,7 @@ const ITEMS = [
 
 const BottomSection = () => {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const categories = searchParams.get("categories");
 
   return (
@@ -47,7 +48,7 @@ const BottomSection = () => {
           <p
             className={cn(
               "text-muted-foreground hover:text-primary transition-all",
-              categories?.toLowerCase() === item?.key?.toLowerCase() &&
+              categories?.toLowerCase() === item?.key?.toLowerCase() && pathname !== '/' &&
                 "text-primary"
             )}
           >
@@ -56,7 +57,7 @@ const BottomSection = () => {
           <div
             className={cn(
               "h-[2px] rounded absolute -bottom-2 w-0 group-hover:!w-full bg-red transition-all ease-out duration-300",
-              categories?.toLowerCase() === item?.key?.toLowerCase() &&
+              categories?.toLowerCase() === item?.key?.toLowerCase() && pathname !== '/' &&
                 "w-full"
             )}
           />
