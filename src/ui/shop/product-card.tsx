@@ -22,7 +22,7 @@ const ProductCard = ({ product }: Props) => {
         />
       </AspectRatio>
 
-      <p className="h-[44px] text-sm font-semibold text-muted-foreground overflow-hidden">
+      <p className="h-[44px] text-sm font-semibold text-primary/90 overflow-hidden">
         {product.title}
       </p>
       <div className="flex justify-between w-full items-start">
@@ -50,6 +50,9 @@ const ProductCard = ({ product }: Props) => {
           />
         </div>
       </div>
+
+      {/* colors */}
+      <div className="absolute">colors</div>
     </div>
   );
 };
