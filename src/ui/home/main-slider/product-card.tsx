@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ProductType } from "@/definitions";
 import { Star } from "lucide-react";
+import Link from "next/link";
 
 type Props = {
   product: ProductType;
@@ -9,7 +10,7 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="bg-background h-52 w-36 rounded-xl overflow-hidden flex flex-col justify-between items-center pb-1 select-none cursor-pointer relative">
+    <Link href={`/product/${product.id}`} className="bg-background h-52 w-36 rounded-xl overflow-hidden flex flex-col justify-between items-center pb-1 select-none cursor-pointer relative">
       <AspectRatio className="flex justify-center items-center">
         <Image src={product.image} alt="product" width={70} height={70} />
       </AspectRatio>
@@ -25,7 +26,7 @@ const ProductCard = ({ product }: Props) => {
         <Star fill="#f9a825" stroke="#f9a825" width={15} />
         <p className="text-[#f9a825] text-xs font-extrabold">{product.rating.rate}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
