@@ -48,7 +48,8 @@ const BottomSection = () => {
           <p
             className={cn(
               "text-muted-foreground hover:text-primary transition-all",
-              categories?.toLowerCase() === item?.key?.toLowerCase() && pathname !== '/' &&
+              categories?.toLowerCase() === item?.key?.toLowerCase() &&
+                pathname === "/shop" &&
                 "text-primary"
             )}
           >
@@ -57,7 +58,8 @@ const BottomSection = () => {
           <div
             className={cn(
               "h-[2px] rounded absolute -bottom-2 w-0 group-hover:!w-full bg-red transition-all ease-out duration-300",
-              categories?.toLowerCase() === item?.key?.toLowerCase() && pathname !== '/' &&
+              categories?.toLowerCase() === item?.key?.toLowerCase() &&
+                pathname === "/shop" &&
                 "w-full"
             )}
           />
