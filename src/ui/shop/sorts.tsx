@@ -8,19 +8,19 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 const ITEMS = [
   {
     title: "Most Popular",
-    key: "popular",
+    key: "rate",
   },
   {
     title: "Most Sold",
-    key: "sold",
+    key: "count",
   },
   {
     title: "Most Expensive",
-    key: "expensive",
+    key: "price",
   },
   {
     title: "Most Cheap",
-    key: "cheap",
+    key: "-price",
   },
 ];
 

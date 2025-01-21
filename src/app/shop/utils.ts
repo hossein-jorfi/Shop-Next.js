@@ -13,17 +13,34 @@ export const filterProducts = (
     result = products || [];
   }
 
-  console.log(products)
   if (sort) {
-    console.log(sort);
-    dynamicSort(products ,"price");
+    if (sort == "price") {
+      result = result
+        .toSorted((a, b) => {
+          return a.price - b.price;
+        })
+        .reverse();
+    }
+    if (sort == "-price") {
+      result = result.toSorted((a, b) => {
+        return a.price - b.price;
+      });
+    }
+    if (sort == "rate") {
+      result = result
+        .toSorted((a, b) => {
+          return a.rating.rate - b.rating.rate;
+        })
+        .reverse();
+    }
+    if (sort == "count") {
+      result = result
+        .toSorted((a, b) => {
+          return a.rating.count - b.rating.count;
+        })
+        .reverse();
+    }
   }
 
   return result;
-};
-
-const dynamicSort = (arr: ProductType[] | undefined, property: string ) => {
-  return arr?.sort(function (a, b) {
-    return a[property] - b[property];
-  });
 };
