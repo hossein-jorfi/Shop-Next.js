@@ -1,4 +1,5 @@
 import { ProductType } from "@/definitions";
+import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,16 +21,23 @@ const ProductSingle = ({ product }: { product: ProductType | undefined }) => {
             <p className="font-medium text-sm text-muted-foreground">
               {product?.description}
             </p>
-            <div className="text-sm">
+            <div className="text-sm flex flex-col gap-1">
               <Link
                 href={`/shop?categories=${product?.category}`}
-                className="bg-muted text-primary/70 font-bold w-fit p-1 rounded-lg"
+                className="bg-muted text-primary/70 font-bold w-fit py-1 px-2 rounded-lg"
               >
                 {product?.category}
               </Link>
-              <p>{product?.price}</p>
-              <p>{product?.rating.rate}</p>
-              <p>{product?.rating.count}</p>
+              <div className="flex gap-2 items-center">
+                <div className="flex items-center gap-0.5">
+                  <Star fill="#f9a825" stroke="#f9a825" width={15} />
+                  <p className="font-bold">{product?.rating.rate}</p>
+                </div>
+                <p className="font-bold text-xs text-muted-foreground">
+                  (Out Of {product?.rating.count} Buyers)
+                </p>
+              </div>
+              <p>{product?.price} USD</p>
             </div>
           </div>
         </div>
