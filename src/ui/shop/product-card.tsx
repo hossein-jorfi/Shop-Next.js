@@ -4,6 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ProductType } from "@/definitions";
 import ColorsPlate from "./colors-plate";
 import ClockImage from '@/assets/shop/clock.png'
+import Link from "next/link";
 
 type Props = {
   product: ProductType;
@@ -11,7 +12,7 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="flex flex-col justify-between items-start select-none cursor-pointer relative border p-4 hover:shadow-same">
+    <Link href={`/product/${product.id}`} className="flex flex-col justify-between items-start select-none cursor-pointer relative border p-4 hover:shadow-same">
       <AspectRatio className="flex justify-center items-center">
         <Image
           src={product.image}
@@ -54,7 +55,7 @@ const ProductCard = ({ product }: Props) => {
 
       {/* colors */}
       <ColorsPlate />
-    </div>
+    </Link>
   );
 };
 
