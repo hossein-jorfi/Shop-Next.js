@@ -8,12 +8,14 @@ const Details = ({ product }: { product: ProductType | undefined }) => {
   return (
     <div className="grid grid-cols-2 gap-3 w-full justify-start">
       <div>
-        <AspectRatio className="" ratio={1 / 1}>
+        <AspectRatio className="flex justify-center items-center border h-fit py-5">
           <Image
             src={product?.image || ""}
             alt="product"
-            fill
-            className="!w-auto object-cover"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-1/2"
           />
         </AspectRatio>
       </div>
