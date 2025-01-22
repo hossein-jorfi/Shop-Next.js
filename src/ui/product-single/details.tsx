@@ -1,3 +1,4 @@
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ProductType } from "@/definitions";
 import { Star } from "lucide-react";
 import Image from "next/image";
@@ -5,15 +6,17 @@ import Link from "next/link";
 
 const Details = ({ product }: { product: ProductType | undefined }) => {
   return (
-    <div className="flex gap-3 w-full">
-      <Image
-        src={product?.image || ""}
-        alt="product"
-        width={0}
-        height={0}
-        sizes="100vw"
-        className="w-56"
-      />
+    <div className="grid grid-cols-2 gap-3 w-full justify-start">
+      <div>
+        <AspectRatio className="" ratio={1 / 1}>
+          <Image
+            src={product?.image || ""}
+            alt="product"
+            fill
+            className="!w-auto object-cover"
+          />
+        </AspectRatio>
+      </div>
       <div className="flex flex-col gap-2 text-left">
         <p className="font-bold text-primary/90">{product?.title}</p>
         <p className="font-medium text-sm text-muted-foreground">
