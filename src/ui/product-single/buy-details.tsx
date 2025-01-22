@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { ShieldCheck } from "lucide-react";
 
 interface Props {
   price: number;
@@ -32,6 +33,10 @@ const BuyDetails = ({ price }: Props) => {
           </p>
         </div>
         <Button className="w-full font-bold">Add To Card</Button>
+        <div className="flex gap-2 font-medium text-primary/90">
+            <ShieldCheck />
+            <p>One Year Guarantee</p>
+        </div>
       </div>
     </div>
   );
