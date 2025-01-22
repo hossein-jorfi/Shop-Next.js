@@ -24,7 +24,7 @@ const BuyDetails = ({ price }: Props) => {
               5<span className="text-xs font-extrabold">%</span>
             </p>
             <p className="text-xs text-muted-foreground/70 font-bold line-through">
-              {price + price * 0.1}
+              {(price + price * 0.1).toFixed(3)}
             </p>
           </div>
           <p className="font-bold text-xl">
