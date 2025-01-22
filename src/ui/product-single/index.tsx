@@ -2,11 +2,14 @@ import { ProductType } from "@/definitions";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ProductBreadcrumb from "./product-breadcrumb";
 
 const ProductSingle = ({ product }: { product: ProductType | undefined }) => {
   return (
     <div className="pt-5 custom-container content-paddign-x">
-      <div className="custom-container p-5 border rounded-lg">
+      <ProductBreadcrumb />
+
+      <div className="custom-container p-5 border rounded-lg my-3">
         <div className="flex gap-3">
           <Image
             src={product?.image || ""}
