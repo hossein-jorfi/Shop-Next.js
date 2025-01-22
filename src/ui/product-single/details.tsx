@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Details = ({ product }: { product: ProductType | undefined }) => {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 w-full">
       <Image
         src={product?.image || ""}
         alt="product"
