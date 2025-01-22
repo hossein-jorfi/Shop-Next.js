@@ -17,10 +17,20 @@ const BuyDetails = ({ price }: Props) => {
       </div>
       <Separator />
       <div className="flex flex-col gap-4">
-        <p className="font-bold text-xl">
-          {price}{" "}
-          <span className="text-xs text-primary/70 font-extrabold">USD</span>
-        </p>
+        <div>
+          <div className="flex gap-2 items-center">
+            <p className="text-sm px-1 rounded-xl bg-red text-white font-bold">
+              5<span className="text-xs font-extrabold">%</span>
+            </p>
+            <p className="text-xs text-muted-foreground/70 font-bold line-through">
+              {price + price * 0.1}
+            </p>
+          </div>
+          <p className="font-bold text-xl">
+            {price}{" "}
+            <span className="text-xs text-primary/70 font-extrabold">USD</span>
+          </p>
+        </div>
         <Button className="w-full font-bold">Add To Card</Button>
       </div>
     </div>
