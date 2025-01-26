@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { Check } from "lucide-react";
 
 const ITEMS = [
   {
@@ -40,14 +41,15 @@ const ColorPicker = () => {
           key={index}
           onClick={() => setSelected(item.title)}
           className={cn(
-            "rounded-full p-0.5 cursor-pointer",
-            selected === item.title &&
-              "outline outline-2 outline-blue-400"
+            "rounded-full p-0.5 cursor-pointer relative",
+            selected === item.title && "outline outline-2 outline-blue-400"
           )}
         >
-          <div
-            className={cn(item.className, "w-7 h-7 rounded-full p-3")}
-          />
+          <div className={cn(item.className, "w-7 h-7 rounded-full p-3")} />
+
+          {selected === item.title && (
+            <Check className="text-white absolute w-5 m-auto left-0 right-0 top-0 bottom-0" />
+          )}
         </div>
       ))}
     </div>
