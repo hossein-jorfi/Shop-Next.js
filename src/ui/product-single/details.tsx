@@ -8,7 +8,7 @@ const Details = ({ product }: { product: ProductType | undefined }) => {
   return (
     <div className="grid grid-cols-2 gap-3 w-full justify-start">
       <div>
-        <AspectRatio className="flex justify-center items-center border h-fit py-5">
+        <AspectRatio className="flex justify-center items-center h-fit py-5">
           <Image
             src={product?.image || ""}
             alt="product"
@@ -40,7 +40,7 @@ const Details = ({ product }: { product: ProductType | undefined }) => {
               (Out Of {product?.rating.count} Buyers)
             </p>
           </div>
-          <p>{product?.price} USD</p>
+          <p className="font-bold">{product?.price} <span className="text-xs text-muted-foreground">USD</span></p>
         </div>
       </div>
     </div>
