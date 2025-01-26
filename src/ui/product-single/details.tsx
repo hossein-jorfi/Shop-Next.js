@@ -3,6 +3,7 @@ import { ProductType } from "@/definitions";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ColorPicker from "./color-picker";
 
 const Details = ({ product }: { product: ProductType | undefined }) => {
   return (
@@ -41,6 +42,8 @@ const Details = ({ product }: { product: ProductType | undefined }) => {
             </p>
           </div>
           <p className="font-bold">{product?.price} <span className="text-xs text-muted-foreground">USD</span></p>
+
+          <ColorPicker />
         </div>
       </div>
     </div>
