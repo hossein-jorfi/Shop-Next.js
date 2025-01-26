@@ -35,23 +35,26 @@ const ColorPicker = () => {
   const [selected, setSelected] = useState(ITEMS[0].title);
 
   return (
-    <div className="flex gap-2">
-      {ITEMS.map((item, index) => (
-        <div
-          key={index}
-          onClick={() => setSelected(item.title)}
-          className={cn(
-            "rounded-full p-0.5 cursor-pointer relative",
-            selected === item.title && "outline outline-2 outline-blue-400"
-          )}
-        >
-          <div className={cn(item.className, "w-7 h-7 rounded-full p-3")} />
+    <div className="mt-5 flex flex-col gap-2">
+      <p className="text-lg font-semibold capitalize">Color: {selected}</p>
+      <div className="flex gap-2">
+        {ITEMS.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => setSelected(item.title)}
+            className={cn(
+              "rounded-full p-0.5 cursor-pointer relative",
+              selected === item.title && "outline outline-2 outline-blue-400"
+            )}
+          >
+            <div className={cn(item.className, "w-7 h-7 rounded-full p-3")} />
 
-          {selected === item.title && (
-            <Check className="text-white absolute w-5 m-auto left-0 right-0 top-0 bottom-0" />
-          )}
-        </div>
-      ))}
+            {selected === item.title && (
+              <Check className="text-white absolute w-5 m-auto left-0 right-0 top-0 bottom-0" />
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
