@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ShieldCheck } from "lucide-react";
 import ClockImage from "@/assets/shop/clock.png";
-import { Truck } from "lucide-react";
+import CoinImage from "@/assets/shop/coin.svg";
+import { Truck, Info } from "lucide-react";
 import Image from "next/image";
 
 interface Props {
@@ -51,6 +52,12 @@ const BuyDetails = ({ price }: Props) => {
           <Truck width={16} className="text-red" />
           <p>Shop Delivery</p>
         </div>
+      </div>
+      <Separator />
+      <div className="flex items-center gap-1 text-sm text-primary/90 font-medium">
+        <Image src={CoinImage} width={26} alt="Delivery Today" />
+        <p>150 point in shop club</p>
+        <Info width={16} className="text-muted-foreground ml-1" />
       </div>
     </div>
   );
