@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ShieldCheck } from "lucide-react";
+import ClockImage from "@/assets/shop/clock.png";
+import { Truck } from "lucide-react";
+import Image from "next/image";
 
 interface Props {
   price: number;
@@ -34,8 +37,19 @@ const BuyDetails = ({ price }: Props) => {
         </div>
         <Button className="w-full font-bold">Add To Card</Button>
         <div className="flex gap-2 font-medium text-primary/90">
-            <ShieldCheck />
-            <p>One Year Guarantee</p>
+          <ShieldCheck />
+          <p>One Year Guarantee</p>
+        </div>
+      </div>
+      <Separator />
+      <div className="flex flex-col text-sm text-muted-foreground font-medium">
+        <div className="flex items-center gap-1">
+          <Image src={ClockImage} width={16} alt="Delivery Today" />
+          <p>Delivery Today</p>
+        </div>
+        <div className="flex items-center gap-1">
+          <Truck width={16} className="text-red" />
+          <p>Shop Delivery</p>
         </div>
       </div>
     </div>
