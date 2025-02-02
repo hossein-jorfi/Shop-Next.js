@@ -4,8 +4,8 @@ import { useTotalCount } from "@/store/hooks";
 const itemContainerClass =
   "flex justify-between items-center gap-0.5 text-sm font-semibold";
 
-const FinalBuy = () => {
-  const count = useTotalCount()
+const FinalBuy = ({ totalPrice }: { totalPrice: number }) => {
+  const count = useTotalCount();
 
   return (
     <div className="border rounded-lg p-3 flex flex-col gap-2">
@@ -16,7 +16,7 @@ const FinalBuy = () => {
       <div className={cn(itemContainerClass, "text-primary/90")}>
         <p>Totla Price</p>
         <div className="flex items-baseline gap-0.5">
-          <p className="text-base">283</p>
+          <p className="text-base">{totalPrice}</p>
           <span className="text-xs">USD</span>
         </div>
       </div>
