@@ -5,8 +5,8 @@ import { ProductInfo } from "./product-info";
 
 export const ProductItem = () => {
   return (
-    <div className="border flex p-3">
-      <div className="flex flex-col justify-start items-center">
+    <div className="flex gap-2 p-3">
+      <div className="flex flex-col items-center justify-between">
         <div className="h-28 w-28">
           <AspectRatio className="flex justify-center items-center">
             <Image
