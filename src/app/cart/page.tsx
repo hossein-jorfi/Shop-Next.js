@@ -18,7 +18,7 @@ export const Page = () => {
       ) : (
         <>
           <div className="w-[300px] shrink-0">
-            <FinalBuy totalPrice={+totalPrice.toFixed()} />
+            <FinalBuy totalPrice={+totalPrice.toFixed(2)} />
           </div>
           <div className="flex-grow">
             <Products products={data} />
