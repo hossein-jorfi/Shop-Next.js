@@ -9,23 +9,34 @@ interface Props {
 }
 
 export const ProductItem = ({ product }: Props) => {
+  const renderImage = (
+    <div className="h-28 w-28 cursor-pointer">
+      <AspectRatio className="flex justify-center items-center">
+        <Image
+          src={product?.image || ""}
+          alt="product"
+          width={60}
+          height={60}
+        />
+      </AspectRatio>
+    </div>
+  );
+
   return (
-    <div className="flex gap-2 p-3">
+    <div className="flex flex-col md:flex-row gap-2 p-3">
+      <div className="flex md:hidden border rounded-lg justify-center items-center">{renderImage}</div>
       <div className="flex flex-col items-center justify-between">
-        <div className="h-28 w-28 cursor-pointer">
-          <AspectRatio className="flex justify-center items-center">
-            <Image
-              src={product?.image || ""}
-              alt="product"
-              width={60}
-              height={60}
-            />
-          </AspectRatio>
+        <div className="hidden md:block">{renderImage}</div>
+        <div className="hidden md:block">
+          <ManageButton id={product?.id || 0} />
         </div>
-        <ManageButton id={product?.id || 0} />
       </div>
 
       <ProductInfo product={product} />
+
+      <div className="block md:hidden w-fit">
+        <ManageButton id={product?.id || 0} />
+      </div>
     </div>
   );
 };

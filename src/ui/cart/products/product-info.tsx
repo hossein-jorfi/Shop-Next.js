@@ -11,7 +11,7 @@ interface Props {
 export const ProductInfo = ({ product }: Props) => {
   return (
     <div className="flex flex-col gap-2">
-      <p className="font-semibold text-primary/90">{product?.title}</p>
+      <p className="font-semibold text-left text-primary/90">{product?.title}</p>
       <div className="flex flex-col items-start gap-1">
         <InfoItem text="black">
           <div className="w-4 h-4 rounded-full bg-black" />
