@@ -7,14 +7,11 @@ import { ReactNode } from "react";
 import { Separator } from "@/components/ui/separator";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import useCartStore from "@/store/useCartStore";
-import { getTotalProductsCount } from "@/store/utils";
+import { useTotalCount } from "@/store/hooks";
 
 const TopSection = () => {
   const router = useRouter();
-
-  const products = useCartStore(state => state.products)
-  const cartTotalCount = getTotalProductsCount(products)
+  const count = useTotalCount()
 
   return (
     <div className="flex justify-between items-center gap-7">
@@ -33,7 +30,7 @@ const TopSection = () => {
           </NavItemWraper>
         </div>
         <Separator orientation="vertical" className="h-6" />
-        <NavItemWraper count={cartTotalCount} onClick={() => router.push("/cart")}>
+        <NavItemWraper count={count} onClick={() => router.push("/cart")}>
           <ShoppingCart />
         </NavItemWraper>
       </div>

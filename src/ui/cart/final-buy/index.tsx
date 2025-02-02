@@ -1,21 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import useCartStore from "@/store/useCartStore";
-import { getTotalProductsCount } from "@/store/utils";
-
+import { useTotalCount } from "@/store/hooks";
 const itemContainerClass =
   "flex justify-between items-center gap-0.5 text-sm font-semibold";
 
 const FinalBuy = () => {
-
-  const products = useCartStore(state => state.products)
-  const cartTotalCount = getTotalProductsCount(products)
+  const count = useTotalCount()
 
   return (
     <div className="border rounded-lg p-3 flex flex-col gap-2">
       <div className={cn(itemContainerClass, "text-muted-foreground")}>
         <p>Totla Product</p>
-        <p>{cartTotalCount}</p>
+        <p>{count}</p>
       </div>
       <div className={cn(itemContainerClass, "text-primary/90")}>
         <p>Totla Price</p>
