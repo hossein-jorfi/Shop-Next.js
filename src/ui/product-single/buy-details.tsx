@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import ClockImage from "@/assets/shop/clock.png";
 import CoinImage from "@/assets/shop/coin.svg";
 import { Truck, Info, ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import AddToCartButton from "./addtocart-button";
 
 interface Props {
   price: number;
@@ -35,7 +35,7 @@ const BuyDetails = ({ price }: Props) => {
             <span className="text-xs text-primary/70 font-extrabold">USD</span>
           </p>
         </div>
-        <Button className="w-full font-bold">Add To Card</Button>
+        <AddToCartButton />
         <div className="flex gap-2 font-medium text-primary/90">
           <ShieldCheck />
           <p>One Year Guarantee</p>
