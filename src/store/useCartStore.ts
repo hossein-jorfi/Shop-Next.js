@@ -20,7 +20,7 @@ const useCartStore = create<CartState>()(
       // actions
       addProduct: (id) =>
         set((state) => {
-          let newProducts = state.products;
+          let newProducts = [...state.products];
           const findProduct = state.products.find(
             (product) => product.id === id
           );
@@ -46,7 +46,7 @@ const useCartStore = create<CartState>()(
         }),
       removeProduct: (id) =>
         set((state) => {
-          let newProducts = state.products;
+          let newProducts = [...state.products];
           const findProduct = state.products.find(
             (product) => product.id === id
           );
@@ -57,7 +57,7 @@ const useCartStore = create<CartState>()(
                 if (product.id === id) {
                   return {
                     ...product,
-                    count: product.count - 1
+                    count: product.count - 1,
                   };
                 } else return product;
               });
