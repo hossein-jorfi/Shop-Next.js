@@ -2,18 +2,22 @@
 
 import { useProducts } from "@/client-services";
 import { ProductType } from "@/definitions";
-import { useTotalPrice } from "@/store/hooks";
+import { useTotalCount, useTotalPrice } from "@/store/hooks";
 import FinalBuy from "@/ui/cart/final-buy";
 import Products from "@/ui/cart/products";
 
 const Page = () => {
   const { data, isLoading } = useProducts<ProductType[]>();
-
+  const totalCount = useTotalCount();
   const totalPrice = useTotalPrice(data || []);
 
   return (
     <div className="pt-5 custom-container content-paddign-x flex flex-row-reverse justify-between gap-4">
-      {isLoading ? (
+      {totalCount == 0 ? (
+        <div className="flex-grow">
+          <Products products={[]} />
+        </div>
+      ) : isLoading ? (
         "Loading..."
       ) : (
         <>

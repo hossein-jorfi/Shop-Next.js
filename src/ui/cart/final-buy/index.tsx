@@ -31,7 +31,7 @@ const FinalBuy = ({ totalPrice }: { totalPrice: number }) => {
             <p className="text-xs">(5%)</p>
           </div>
         </div>
-        <DialogTrigger>
+        <DialogTrigger asChild>
           <Button size="lg" className="font-bold text-base w-full">
             Finish Purchase
           </Button>
