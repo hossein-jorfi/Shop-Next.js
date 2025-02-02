@@ -7,9 +7,12 @@ import { ReactNode } from "react";
 import { Separator } from "@/components/ui/separator";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import useCartStore from "@/store/useCartStore";
 
 const TopSection = () => {
   const router = useRouter();
+
+  const cartTotalCount = useCartStore(state => state.products)?.length
 
   return (
     <div className="flex justify-between items-center gap-7">
@@ -28,7 +31,7 @@ const TopSection = () => {
           </NavItemWraper>
         </div>
         <Separator orientation="vertical" className="h-6" />
-        <NavItemWraper count={9} onClick={() => router.push("/cart")}>
+        <NavItemWraper count={cartTotalCount} onClick={() => router.push("/cart")}>
           <ShoppingCart />
         </NavItemWraper>
       </div>
@@ -53,13 +56,13 @@ const NavItemWraper = ({
       className="rounded-md p-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors disabled:opacity-50 hover:bg-accent hover:text-accent-foreground cursor-pointer relative"
     >
       {children}
-      {count && (
+      {count! > 0 && (
         <span
           className={cn(
             "absolute top-0 right-0 bg-red font-bold text-white texts-sm rounded-full flex justify-center items-center",
-            count < 10 && "w-5 h-5",
-            count >= 10 && "w-[22px] h-[22px]",
-            count >= 100 && "w-fit px-1 h-5 -right-3",
+            count && count < 10 && "w-5 h-5",
+            count && count >= 10 && "w-[22px] h-[22px]",
+            count && count >= 100 && "w-fit px-1 h-5 -right-3",
           )}
         >
           {count}
