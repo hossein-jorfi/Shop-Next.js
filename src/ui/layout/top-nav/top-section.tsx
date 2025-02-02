@@ -8,11 +8,13 @@ import { Separator } from "@/components/ui/separator";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import useCartStore from "@/store/useCartStore";
+import { getTotalProductsCount } from "@/store/utils";
 
 const TopSection = () => {
   const router = useRouter();
 
-  const cartTotalCount = useCartStore(state => state.products)?.length
+  const products = useCartStore(state => state.products)
+  const cartTotalCount = getTotalProductsCount(products)
 
   return (
     <div className="flex justify-between items-center gap-7">
