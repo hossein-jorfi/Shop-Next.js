@@ -1,6 +1,7 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import { ManageButton } from "./manage-button";
+import { ProductInfo } from "./product-info";
 
 export const ProductItem = () => {
   return (
@@ -19,7 +20,7 @@ export const ProductItem = () => {
         <ManageButton />
       </div>
 
-      <p>test</p>
+      <ProductInfo />
     </div>
   );
 };
