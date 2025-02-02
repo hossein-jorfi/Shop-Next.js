@@ -2,13 +2,16 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import { ShieldCheck, ShoppingBag, Truck } from "lucide-react";
 import ClockImage from "@/assets/shop/clock.png";
+import { ProductType } from "@/definitions";
 
-export const ProductInfo = () => {
+interface Props {
+  product: ProductType | undefined;
+}
+
+export const ProductInfo = ({ product }: Props) => {
   return (
     <div className="flex flex-col gap-2">
-      <p className="font-semibold text-primary/90">
-        Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
-      </p>
+      <p className="font-semibold text-primary/90">{product?.title}</p>
       <div className="flex flex-col items-start gap-1">
         <InfoItem text="black">
           <div className="w-4 h-4 rounded-full bg-black" />
@@ -28,7 +31,7 @@ export const ProductInfo = () => {
       </div>
 
       <p className="font-bold text-xl text-left">
-        500
+        {product?.price}
         <span className="text-xs text-primary/70 font-extrabold ml-1">USD</span>
       </p>
     </div>
