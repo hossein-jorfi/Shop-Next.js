@@ -6,12 +6,13 @@ export type ProductInCartType = {
   count: number;
 };
 
-interface BearState {
+interface CartState {
   products: ProductInCartType[];
   addProduct: (id: number) => void;
+  removeProduct: (id: number) => void;
 }
 
-const useCartStore = create<BearState>()(
+const useCartStore = create<CartState>()(
   persist(
     (set) => ({
       // initial state
@@ -41,6 +42,29 @@ const useCartStore = create<BearState>()(
             });
           }
 
+          return { products: newProducts };
+        }),
+      removeProduct: (id) =>
+        set((state) => {
+          let newProducts = state.products;
+          const findProduct = state.products.find(
+            (product) => product.id === id
+          );
+
+          if (findProduct !== undefined) {
+            if (findProduct.count > 1) {
+              newProducts = newProducts.map((product) => {
+                if (product.id === id) {
+                  return {
+                    ...product,
+                    count: product.count - 1
+                  };
+                } else return product;
+              });
+            } else {
+              newProducts = newProducts.filter((product) => product.id !== id);
+            }
+          }
           return { products: newProducts };
         }),
     }),
