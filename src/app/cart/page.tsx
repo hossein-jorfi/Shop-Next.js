@@ -13,7 +13,7 @@ const Page = () => {
   const totalPrice = useTotalPrice(data || []);
 
   return (
-    <div className="pt-5 custom-container content-paddign-x flex flex-row-reverse justify-between gap-4">
+    <div className="pt-5 custom-container content-paddign-x flex flex-col-reverse lg:flex-row justify-between gap-4">
       {totalCount == 0 ? (
         <div className="flex-grow">
           <Products products={[]} />
@@ -22,11 +22,11 @@ const Page = () => {
         <CartLoading />
       ) : (
         <>
-          <div className="w-[300px] shrink-0">
-            <FinalBuy totalPrice={+totalPrice.toFixed(2)} />
-          </div>
           <div className="flex-grow">
             <Products products={data} />
+          </div>
+          <div className="w-full md:w-[300px] shrink-0">
+            <FinalBuy totalPrice={+totalPrice.toFixed(2)} />
           </div>
         </>
       )}
