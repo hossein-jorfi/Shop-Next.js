@@ -7,8 +7,11 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import useCartStore from "@/store/useCartStore";
 
 export const VerifyModal = () => {
+  const clearCart = useCartStore((state) => state.clearCart);
+
   return (
     <DialogContent className="sm:w-96">
       <DialogHeader>
@@ -20,7 +23,7 @@ export const VerifyModal = () => {
       <DialogFooter>
         <div className="w-full flex gap-2 mt-5">
           <DialogClose asChild>
-            <Button className="w-full">Yes</Button>
+            <Button onClick={() => clearCart()} className="w-full">Yes</Button>
           </DialogClose>
           <DialogClose asChild>
             <Button className="w-full" variant="ghost">
