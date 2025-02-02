@@ -5,14 +5,6 @@ import React from "react";
 const CartLoading = () => {
   return (
     <>
-      <div className="w-[300px] shrink-0">
-        <div className="border rounded-lg p-3 flex flex-col gap-2">
-          <InfoItem />
-          <InfoItem />
-          <InfoItem />
-          <Skeleton className="h-9" />
-        </div>
-      </div>
       <div className="flex-grow">
         <div className="flex flex-col gap-2">
           {Array(5)
@@ -23,6 +15,14 @@ const CartLoading = () => {
                 <Separator className="bg-border" />
               </React.Fragment>
             ))}
+        </div>
+      </div>
+      <div className="w-[300px] shrink-0">
+        <div className="border rounded-lg p-3 flex flex-col gap-2">
+          <InfoItem />
+          <InfoItem />
+          <InfoItem />
+          <Skeleton className="h-9" />
         </div>
       </div>
     </>

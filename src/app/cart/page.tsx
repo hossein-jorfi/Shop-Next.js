@@ -8,9 +8,11 @@ import FinalBuy from "@/ui/cart/final-buy";
 import Products from "@/ui/cart/products";
 
 const Page = () => {
-  const { data, isLoading } = useProducts<ProductType[]>();
+  const { data, isLoading, isError } = useProducts<ProductType[]>();
   const totalCount = useTotalCount();
   const totalPrice = useTotalPrice(data || []);
+
+  if (isError) return <p className="pt-5">Error</p>
 
   return (
     <div className="pt-5 custom-container content-paddign-x flex flex-col-reverse lg:flex-row justify-between gap-4">

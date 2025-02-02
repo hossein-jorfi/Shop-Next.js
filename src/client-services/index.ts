@@ -10,7 +10,6 @@ export const api = axios.create({
 type Method = "get" | "post" | "put" | "patch" | "delete";
 const fetcher = (method: Method) => {
   const fetcherFun = async (url: string) => {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
     const { data } = await api[method](url);
     return data;
   };
