@@ -1,4 +1,4 @@
-import { Trash2, Plus } from "lucide-react";
+import { Trash2, Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import useCartStore from "@/store/useCartStore";
 
@@ -21,7 +21,7 @@ export const ManageButton = ({ id }: { id: number }) => {
         size="icon"
         className={buttonStyles}
       >
-        <Trash2 />
+        {productCount == 1 ? <Trash2 /> : <Minus />}
       </Button>
       <p className="text-sm font-medium">{productCount}</p>
       <Button

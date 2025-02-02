@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import useCartStore from "@/store/useCartStore";
-import { Plus, Trash2 } from "lucide-react";
+import { Minus, Plus, Trash2 } from "lucide-react";
 
 const buttonStyles = "hover:text-red";
 
@@ -26,7 +26,10 @@ const AddToCartButton = ({ id }: { id: number | undefined }) => {
   return (
     <div>
       {!cartProduct?.count ? (
-        <Button onClick={handleAddProduct} className="w-full font-bold h-[46px]">
+        <Button
+          onClick={handleAddProduct}
+          className="w-full font-bold h-[46px]"
+        >
           Add To Card
         </Button>
       ) : (
@@ -37,7 +40,7 @@ const AddToCartButton = ({ id }: { id: number | undefined }) => {
             size="icon"
             className={buttonStyles}
           >
-            <Trash2 />
+            {cartProduct?.count == 1 ? <Trash2 /> : <Minus />}
           </Button>
           <p className="text-sm font-medium">{cartProduct?.count}</p>
           <Button
