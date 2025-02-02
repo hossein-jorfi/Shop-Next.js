@@ -10,6 +10,7 @@ interface CartState {
   products: ProductInCartType[];
   addProduct: (id: number) => void;
   removeProduct: (id: number) => void;
+  clearCart: () => void;
 }
 
 const useCartStore = create<CartState>()(
@@ -67,6 +68,7 @@ const useCartStore = create<CartState>()(
           }
           return { products: newProducts };
         }),
+      clearCart: () => set(() => ({ products: [] })),
     }),
     {
       name: "shop-storage",
