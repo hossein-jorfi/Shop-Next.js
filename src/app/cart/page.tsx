@@ -6,7 +6,7 @@ import { useTotalPrice } from "@/store/hooks";
 import FinalBuy from "@/ui/cart/final-buy";
 import Products from "@/ui/cart/products";
 
-export const Page = () => {
+const Page = () => {
   const { data, isLoading } = useProducts<ProductType[]>();
 
   const totalPrice = useTotalPrice(data || []);
