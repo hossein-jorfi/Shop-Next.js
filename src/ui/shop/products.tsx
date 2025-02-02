@@ -15,7 +15,7 @@ const Products = ({ products }: Props) => {
   const sort = searchParams.get('sort')
 
   return (
-    <div className="w-full h-full grid grid-cols-3 gap-3">
+    <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
       {filterProducts(products, categories, sort)?.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

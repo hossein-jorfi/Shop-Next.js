@@ -47,7 +47,7 @@ const Sorts = () => {
   };
 
   return (
-    <div className="p-3 w-80 border rounded-lg h-80 flex flex-col items-start">
+    <div className="p-3 w-80 border rounded-lg h-80 hidden sm:flex flex-col items-start">
       <div className="flex justify-between w-full items-center">
         <p className="font-semibold text-primary/90">Sort</p>
         <Button
