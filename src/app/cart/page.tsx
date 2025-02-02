@@ -3,22 +3,24 @@
 import { useProducts } from "@/client-services";
 import { ProductType } from "@/definitions";
 import { useTotalCount, useTotalPrice } from "@/store/hooks";
+import CartLoading from "@/ui/cart/cart-loading";
 import FinalBuy from "@/ui/cart/final-buy";
 import Products from "@/ui/cart/products";
 
 const Page = () => {
-  const { data, isLoading } = useProducts<ProductType[]>();
-  const totalCount = useTotalCount();
-  const totalPrice = useTotalPrice(data || []);
+  // const { data, isLoading } = useProducts<ProductType[]>();
+  // const totalCount = useTotalCount();
+  // const totalPrice = useTotalPrice(data || []);
 
   return (
     <div className="pt-5 custom-container content-paddign-x flex flex-row-reverse justify-between gap-4">
-      {totalCount == 0 ? (
+      <CartLoading />
+      {/* {totalCount == 0 ? (
         <div className="flex-grow">
           <Products products={[]} />
         </div>
       ) : isLoading ? (
-        "Loading..."
+        <CartLoading />
       ) : (
         <>
           <div className="w-[300px] shrink-0">
@@ -28,7 +30,7 @@ const Page = () => {
             <Products products={data} />
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 };
