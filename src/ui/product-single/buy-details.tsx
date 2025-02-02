@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ShieldCheck } from "lucide-react";
 import ClockImage from "@/assets/shop/clock.png";
 import CoinImage from "@/assets/shop/coin.svg";
-import { Truck, Info } from "lucide-react";
+import { Truck, Info, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 
 interface Props {
