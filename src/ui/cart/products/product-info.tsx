@@ -1,5 +1,7 @@
-import { ShieldCheck } from "lucide-react";
 import { ReactNode } from "react";
+import Image from "next/image";
+import { ShieldCheck, ShoppingBag, Truck } from "lucide-react";
+import ClockImage from "@/assets/shop/clock.png";
 
 export const ProductInfo = () => {
   return (
@@ -14,7 +16,21 @@ export const ProductInfo = () => {
         <InfoItem text="One Year Guarantee">
           <ShieldCheck className="h-5 w-5" />
         </InfoItem>
+        <InfoItem text="Shop">
+          <ShoppingBag className="h-4 w-4" />
+        </InfoItem>
+        <InfoItem text="Delivery Today">
+          <Image src={ClockImage} width={16} alt="Delivery Today" />
+        </InfoItem>
+        <InfoItem text="Delivery Today Shop Delivery">
+          <Truck width={16} className="text-red" />
+        </InfoItem>
       </div>
+
+      <p className="font-bold text-xl text-left">
+        500
+        <span className="text-xs text-primary/70 font-extrabold ml-1">USD</span>
+      </p>
     </div>
   );
 };
