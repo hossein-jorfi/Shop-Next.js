@@ -3,10 +3,9 @@
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import MobileMenu from "./mobile-menu";
 
-const ITEMS = [
+export const CATEGORY_ITEMS = [
   {
     title: "All Products",
     href: "/shop",
@@ -42,7 +41,7 @@ const BottomSection = () => {
   return (
     <div className="mt-4 font-semibold text-sm pb-0 sm:pb-2">
       <div className="hidden sm:flex gap-4">
-        {ITEMS.map((item, index) => (
+        {CATEGORY_ITEMS.map((item, index) => (
           <Link
             key={index}
             href={item.href}
@@ -70,10 +69,7 @@ const BottomSection = () => {
         ))}
       </div>
       <div className="flex sm:hidden">
-        <Button variant='ghost' className="p-0 m-0 w-fit h-fit">
-          <Menu />
-          Categories
-        </Button>
+        <MobileMenu />
       </div>
     </div>
   );
