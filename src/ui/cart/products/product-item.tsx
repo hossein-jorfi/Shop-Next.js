@@ -7,7 +7,7 @@ export const ProductItem = () => {
   return (
     <div className="flex gap-2 p-3">
       <div className="flex flex-col items-center justify-between">
-        <div className="h-28 w-28">
+        <div className="h-28 w-28 cursor-pointer">
           <AspectRatio className="flex justify-center items-center">
             <Image
               src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
