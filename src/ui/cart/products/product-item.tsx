@@ -22,7 +22,7 @@ export const ProductItem = ({ product }: Props) => {
             />
           </AspectRatio>
         </div>
-        <ManageButton />
+        <ManageButton id={product?.id || 0} />
       </div>
 
       <ProductInfo product={product} />
