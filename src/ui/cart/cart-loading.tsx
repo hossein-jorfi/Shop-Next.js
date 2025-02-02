@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import React from "react";
 
 const CartLoading = () => {
   return (
@@ -17,10 +18,10 @@ const CartLoading = () => {
           {Array(5)
             .fill(0)
             .map((_, index) => (
-              <>
-                <ProductItem key={index} />
+              <React.Fragment key={index}>
+                <ProductItem />
                 <Separator className="bg-border" />
-              </>
+              </React.Fragment>
             ))}
         </div>
       </div>
