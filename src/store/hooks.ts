@@ -10,7 +10,8 @@ export const useTotalCount = () => {
 };
 
 export const useTotalPrice = (products: ProductType[]) => {
-  const cartTotalPrice = getTotalProductsPrice(products);
+  const cartProducts = useCartStore((state) => state.products);
+  const cartTotalPrice = getTotalProductsPrice(products, cartProducts);
 
   return cartTotalPrice;
 };

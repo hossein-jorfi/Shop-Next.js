@@ -23,7 +23,7 @@ const FinalBuy = ({ totalPrice }: { totalPrice: number }) => {
       <div className={cn(itemContainerClass, "text-[#36953b]")}>
         <p>Totla Discount</p>
         <div className="flex items-baseline gap-0.5">
-          <p className="text-base">57</p>
+          <p className="text-base">{(totalPrice * 0.05).toFixed()}</p>
           <span className="text-xs">USD</span>
           <p className="text-xs">(5%)</p>
         </div>

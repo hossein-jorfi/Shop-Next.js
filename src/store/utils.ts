@@ -10,10 +10,18 @@ export const getTotalProductsCount = (products: ProductInCartType[]) => {
   return result;
 };
 
-export const getTotalProductsPrice = (products: ProductType[]) => {
+export const getTotalProductsPrice = (
+  products: ProductType[],
+  cartProducts: ProductInCartType[]
+) => {
+  const cartIds = cartProducts.map((i) => i.id);
   let result = 0;
   products.forEach((product) => {
-    result += product.price;
+    if (cartIds.includes(product.id)) {
+      const currentProductCount =
+        cartProducts.find((i) => i?.id == product.id)?.count || 0;
+      result += product.price * currentProductCount;
+    }
   });
 
   return result;
