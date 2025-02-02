@@ -20,7 +20,7 @@ const MobileMenu = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="ml-5">
         {CATEGORY_ITEMS.map((i, index) => (
-          <DropdownMenuItem key={index}>
+          <DropdownMenuItem key={index} asChild>
             <Link href={i.href}>{i.title}</Link>
           </DropdownMenuItem>
         ))}
