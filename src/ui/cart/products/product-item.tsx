@@ -5,9 +5,9 @@ import { ManageButton } from "./manage-button";
 export const ProductItem = () => {
   return (
     <div className="border flex p-3">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col justify-start items-center">
         <div className="h-28 w-28">
-          <AspectRatio className="flex justify-start items-center">
+          <AspectRatio className="flex justify-center items-center">
             <Image
               src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
               alt="product"
