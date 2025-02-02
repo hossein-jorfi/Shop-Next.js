@@ -17,7 +17,7 @@ const CartLoading = () => {
             ))}
         </div>
       </div>
-      <div className="w-[300px] shrink-0">
+      <div className="w-full md:w-[300px] shrink-0">
         <div className="border rounded-lg p-3 flex flex-col gap-2">
           <InfoItem />
           <InfoItem />
