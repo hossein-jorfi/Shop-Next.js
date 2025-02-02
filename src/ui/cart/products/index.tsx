@@ -1,7 +1,14 @@
 import { Separator } from "@/components/ui/separator";
 import ProductItem from "./product-item";
+import { ProductType } from "@/definitions";
 
-export const Products = () => {
+interface Props {
+  products: ProductType[] | undefined;
+}
+
+export const Products = ({ products }: Props) => {
+  console.log(products)
+
   return (
     <div className="flex flex-col gap-2">
       <ProductItem />
