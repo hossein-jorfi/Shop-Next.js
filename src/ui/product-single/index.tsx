@@ -10,7 +10,7 @@ const ProductSingle = ({ product }: { product: ProductType | undefined }) => {
 
       <div className="custom-container p-5 border rounded-lg my-3 flex gap-5">
         <Details product={product} />
-        <BuyDetails price={product?.price || 0} />
+        <BuyDetails price={product?.price || 0} id={product?.id} />
       </div>
     </div>
   );

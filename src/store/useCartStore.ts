@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type ProductInCartType = {
+export type ProductInCartType = {
   id: number;
   count: number;
 };
@@ -19,20 +19,34 @@ const useCartStore = create<BearState>()(
       // actions
       addProduct: (id) =>
         set((state) => {
+          let newProducts = state.products;
           const findProduct = state.products.find(
             (product) => product.id === id
           );
+          if (findProduct === undefined) {
+            const newProduct: ProductInCartType = {
+              id: id,
+              count: 1,
+            };
 
-          const newProduct: ProductInCartType = {
-            id: id,
-            count: findProduct === undefined ? 1 : findProduct.count + 1,
-          };
-          return { products: [...state.products, newProduct] };
+            newProducts.push(newProduct);
+          } else {
+            newProducts = newProducts.map((product) => {
+              if (product.id === findProduct.id) {
+                return {
+                  ...product,
+                  count: findProduct.count + 1,
+                };
+              } else return product;
+            });
+          }
+
+          return { products: newProducts };
         }),
     }),
     {
-      name: "todos-storage",
-      partialize: (state) => ({ todos: state.products }),
+      name: "shop-storage",
+      partialize: (state) => ({ products: state.products }),
     }
   )
 );

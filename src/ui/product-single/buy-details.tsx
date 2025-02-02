@@ -7,9 +7,10 @@ import AddToCartButton from "./addtocart-button";
 
 interface Props {
   price: number;
+  id: number | undefined;
 }
 
-const BuyDetails = ({ price }: Props) => {
+const BuyDetails = ({ price, id }: Props) => {
   return (
     <div className="border rounded-lg p-3 bg-muted !w-[500px] h-fit text-left flex flex-col gap-4">
       <div>
@@ -35,7 +36,7 @@ const BuyDetails = ({ price }: Props) => {
             <span className="text-xs text-primary/70 font-extrabold">USD</span>
           </p>
         </div>
-        <AddToCartButton />
+        <AddToCartButton id={id} />
         <div className="flex gap-2 font-medium text-primary/90">
           <ShieldCheck />
           <p>One Year Guarantee</p>
