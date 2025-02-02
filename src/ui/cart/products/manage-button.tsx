@@ -9,13 +9,27 @@ export const ManageButton = ({ id }: { id: number }) => {
     (i) => i.id === id
   )?.count;
 
+  // store actions
+  const addProduct = useCartStore((state) => state.addProduct);
+  const removeProduct = useCartStore((state) => state.removeProduct);
+
   return (
     <div className="border p-1 flex items-center gap-2 text-red rounded-lg">
-      <Button variant="ghost" size="icon" className={buttonStyles}>
+      <Button
+        onClick={() => removeProduct(id)}
+        variant="ghost"
+        size="icon"
+        className={buttonStyles}
+      >
         <Trash2 />
       </Button>
       <p className="text-sm font-medium">{productCount}</p>
-      <Button variant="ghost" size="icon" className={buttonStyles}>
+      <Button
+        onClick={() => addProduct(id)}
+        variant="ghost"
+        size="icon"
+        className={buttonStyles}
+      >
         <Plus />
       </Button>
     </div>
