@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
@@ -59,30 +60,33 @@ const Sorts = () => {
           Clear
         </Button>
       </div>
-      <div className="flex sm:grid sm:grid-cols-1 gap-2 mt-2 w-full">
-        {ITEMS.map((item, index) => (
-          <Link
-            key={index}
-            href={generateHref(item.key)}
-            className="w-full text-left text-sm font-semibold"
-          >
-            <Button
-              variant={
-                item.key?.toLowerCase() === sort?.toLowerCase()
-                  ? "default"
-                  : "outline"
-              }
-              className={cn(
-                "w-full text-sm font-semibold transition-all",
-                item.key?.toLowerCase() === sort?.toLowerCase() &&
-                  "bg-custom-blue hover:bg-custom-blue"
-              )}
+      <ScrollArea>
+        <div className="flex sm:grid sm:grid-cols-1 gap-2 mt-2 w-full">
+          {ITEMS.map((item, index) => (
+            <Link
+              key={index}
+              href={generateHref(item.key)}
+              className="w-full text-left text-sm font-semibold"
             >
-              <p>{item.title}</p>
-            </Button>
-          </Link>
-        ))}
-      </div>
+              <Button
+                variant={
+                  item.key?.toLowerCase() === sort?.toLowerCase()
+                    ? "default"
+                    : "outline"
+                }
+                className={cn(
+                  "w-full text-sm font-semibold transition-all",
+                  item.key?.toLowerCase() === sort?.toLowerCase() &&
+                    "bg-custom-blue hover:bg-custom-blue"
+                )}
+              >
+                <p>{item.title}</p>
+              </Button>
+            </Link>
+          ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
     </div>
   );
 };
