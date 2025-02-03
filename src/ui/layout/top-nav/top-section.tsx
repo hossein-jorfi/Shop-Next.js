@@ -14,14 +14,14 @@ const TopSection = () => {
   const count = useTotalCount()
 
   return (
-    <div className="flex justify-between items-center gap-7">
+    <div className="flex justify-between items-center gap-1 sm:gap-7">
       <div className="flex gap-3 items-center w-full md:w-1/2">
         <CompanyLogo />
         <Search />
       </div>
 
-      <div className="hidden sm:flex gap-3 items-center text-primary/80">
-        <div className="flex gap-2 items-center">
+      <div className="flex gap-3 items-center text-primary/80">
+        <div className="hidden sm:flex gap-2 items-center">
           <NavItemWraper>
             <Bell />
           </NavItemWraper>
@@ -29,7 +29,7 @@ const TopSection = () => {
             <UserRound />
           </NavItemWraper>
         </div>
-        <Separator orientation="vertical" className="h-6" />
+        <Separator orientation="vertical" className="h-6 hidden sm:block" />
         <NavItemWraper count={count} onClick={() => router.push("/cart")}>
           <ShoppingCart />
         </NavItemWraper>
