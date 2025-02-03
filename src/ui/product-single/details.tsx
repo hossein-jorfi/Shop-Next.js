@@ -7,7 +7,7 @@ import ColorPicker from "./color-picker";
 
 const Details = ({ product }: { product: ProductType | undefined }) => {
   return (
-    <div className="grid grid-cols-2 gap-3 w-full justify-start">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full justify-start">
       <div>
         <AspectRatio className="flex justify-center items-center h-fit py-5">
           <Image

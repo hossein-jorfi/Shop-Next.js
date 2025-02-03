@@ -12,7 +12,7 @@ interface Props {
 
 const BuyDetails = ({ price, id }: Props) => {
   return (
-    <div className="border rounded-lg p-3 bg-muted !w-[500px] h-fit text-left flex flex-col gap-4">
+    <div className="border rounded-lg p-3 bg-muted w-full md:!w-[350px] lg:!w-[400px] h-fit text-left flex flex-col gap-4">
       <div>
         <p className="font-bold text-lg">Seller</p>
         <p className="text-primary/80 font-medium">Shop</p>
