@@ -47,7 +47,7 @@ const Sorts = () => {
   };
 
   return (
-    <div className="p-3 w-80 border rounded-lg h-80 hidden sm:flex flex-col items-start">
+    <div className="p-3 w-full sm:w-80 border rounded-lg h-fit">
       <div className="flex justify-between w-full items-center">
         <p className="font-semibold text-primary/90">Sort</p>
         <Button
@@ -59,7 +59,7 @@ const Sorts = () => {
           Clear
         </Button>
       </div>
-      <div className="flex flex-col items-start gap-2 mt-2 w-full">
+      <div className="flex sm:grid sm:grid-cols-1 gap-2 mt-2 w-full">
         {ITEMS.map((item, index) => (
           <Link
             key={index}

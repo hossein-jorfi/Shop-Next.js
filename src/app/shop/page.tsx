@@ -14,7 +14,7 @@ const Shop = async () => {
         <ShopBreadcrumb />
       </Suspense>
 
-      <div className="mt-5 flex gap-3 w-full h-full">
+      <div className="mt-5 flex flex-col sm:flex-row gap-3 w-full h-full">
         <Suspense>
           <Sorts />
         </Suspense>
